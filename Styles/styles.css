@@ -30,12 +30,16 @@ h3 {
 
 ul {
     display: block;
-    list-style-type: disc;
     margin-top: 1em;
     margin-bottom: 1 em;
     margin-left: 0;
     margin-right: 0;
-    padding-left: 40px;
+  }
+
+  li {
+      padding: 5px;
+      font-size: 1.2em;
+      color: var(--hover-color);
   }
 
 strong {
