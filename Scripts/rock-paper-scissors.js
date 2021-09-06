@@ -1,3 +1,17 @@
+const playerBtnRock = document.querySelector('.player-btn-rock');
+const playerBtnPaper = document.querySelector('.player-btn-paper');
+const playerBtnScissors = document.querySelector('.player-btn-scissors');
+const playerScore = document.querySelector('.player-score');
+
+const computerBtnRock = document.querySelector('.player-btn-rock');
+const computerBtnPaper = document.querySelector('.player-btn-paper');
+const computerBtnScissors = document.querySelector('.player-btn-scissors');
+const computerScore = document.querySelector('.computer-score');
+
+const roundLog = document.querySelector('.round-log'); 
+
+const playAgainBtn = document.querySelector('.play-again-button')
+
 /* 
 * Chooses a random number between 1-2 and uses that to return 'Rock', 'Paper', or 'Scissors'
 */
@@ -65,12 +79,10 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
-function game(numRounds = 5) {
-    let playerScore = 0;
+function game(e) {
+    let playerScore = parseInt(playerScore.textContent);
     let computerScore = 0;
-    for (let i = 0; i < numRounds; i++) {
-        let playerInput = prompt(`Enter 'Rock', 'Paper', or 'Scissors'.`);
-        result = playRound(playerInput, computerPlay());
+      let  result = playRound(e.target.dataset.button, computerPlay());
 
         if (result.startsWith('You Win!')) {
             playerScore++;
@@ -79,7 +91,6 @@ function game(numRounds = 5) {
             computerScore++;
         }
         console.log(`${result} (Current Score: ${playerScore} to ${computerScore})`);
-    }
 
     let finalScoreText;
     if (playerScore > computerScore)
@@ -91,5 +102,33 @@ function game(numRounds = 5) {
     console.log();
     console.log(`${finalScoreText} (Final Score: ${playerScore} to ${computerScore})`);
 }
+
+function addLog(logText)
+{
+    const listItem = document.createElement('li');
+    listItem.textContent = logText;
+    roundLog.appendChild(listItem);
+}
+
+function clearActiveButtons()
+{
+    let className = 'active-button';
+    playerBtnRock.classList.remove(className);
+    playerBtnPaper.classList.remove(className);
+    playerBtnScissors.classList.remove(className);
+    computerBtnRock.classList.remove(className);
+    computerBtnPaper.classList.remove(className);
+    computerBtnScissors.classList.remove(className);
+}
+
+function InitControls() {
+
+    playAgainBtn.onclick = () => window.location.reload();
+
+
+}
+InitControls();
+addLog("Test");
+//clearActiveButtons();
 
 //game();

@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="Styles/reset.css">
     <link rel="stylesheet" href="Styles/styles.css">
 </head>
 
@@ -10,38 +11,62 @@
         <h1>Rock, Paper, Scissors, Go!</h1>
     </header>
     <main>
-        <div class="result-container">
+        <div class="result-container hidden">
             <p class="result-text">You Win!</p>
-            <button class="button play-again-button">Play Again</button>
+            <div class="button play-again-button"><p>Play Again</p></div>
         </div>
         <div class="players">
             <div class="player-container">
-                <h2>Player</h2>
-                <p class="score player-score">Score:</p>
+                <div class="player-header">
+                    <h2>Player</h2>
+                    <div class="score-container">
+                        <strong class="score-text">Score</strong>
+                        <p class="player-score">0</p>
+                    </div>
+                </div>
                 <div class="player-buttons">
                     <div class="button btn-rock player-btn-rock" data-button="rock">
                         <img src="Images/hand-rock-grey.svg">
+                        <h3>Rock</h3>
                     </div>
-                    <div class="button btn-paper player-btn-paper">
+                    <div class="button btn-paper player-btn-paper" data-button="paper">
                         <img src="Images/hand-paper-grey.svg">
+                        <h3>Paper</h3>
                     </div>
-                    <div class="button btn-scissors player-btn-scissors">
+                    <div class="button btn-scissors player-btn-scissors" data-button="scissors">
                         <img src="Images/hand-scissors-grey.svg">
+                        <h3>Scissors</h3>
                     </div>
                 </div>
             </div>
             <div class="computer-container">
-                <h2>Computer</h2>
-                <p class="score computer-score">Score:</p>
-                <div class="computer-buttons">
-                    <div class="button btn-rock computer-btn-rock">
-
+                <div class="computer-header">
+                    <h2>Computer</h2>
+                    <div class="score-container">
+                        <strong class="score-text">Score</strong>
+                        <p class="computer-score">0</p>
                     </div>
-                    <a class="button btn-paper computer-btn-paper"></a>
-                    <a class="button btn-scissors computer-btn-scissors"></a>
+                </div>
+                <div class="computer-buttons">
+                    <div class="button btn-rock computer-btn-rock" data-button="rock">
+                        <img src="Images/hand-rock-grey.svg">
+                        <h3>Rock</h3>
+                    </div>
+                    <div class="button btn-paper computer-btn-paper">
+                        <img src="Images/hand-paper-grey.svg">
+                        <h3>Paper</h3>
+                    </div>
+                    <div class="button btn-scissors computer-btn-scissors">
+                        <img src="Images/hand-scissors-grey.svg">
+                        <h3>Scissors</h3>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <ul class="round-log">
+
+        </ul>
 
     </main>
     <footer>
