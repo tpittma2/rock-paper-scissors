@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="Styles/reset.css">
-        <link rel="stylesheet" href="Styles/styles.css">
-    </head> 
-    <body>
-        <script src="scripts/rock-paper-scissors.js"></script>
-    </body>
+
+<head>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Rock, Paper, Scissors, Go!</h1>
+    </header>
+    <main>
+        <div class="result-container">
+            <p class="result-text">You Win!</p>
+            <button class="button play-again-button">Play Again</button>
+        </div>
+        <div class="players">
+            <div class="player-container">
+                <h2>Player</h2>
+                <p class="score player-score">Score:</p>
+                <div class="player-buttons">
+                    <div class="button btn-rock player-btn-rock" data-button="rock">
+                        <img src="Images/hand-rock-grey.svg">
+                    </div>
+                    <div class="button btn-paper player-btn-paper">
+                        <img src="Images/hand-paper-grey.svg">
+                    </div>
+                    <div class="button btn-scissors player-btn-scissors">
+                        <img src="Images/hand-scissors-grey.svg">
+                    </div>
+                </div>
+            </div>
+            <div class="computer-container">
+                <h2>Computer</h2>
+                <p class="score computer-score">Score:</p>
+                <div class="computer-buttons">
+                    <div class="button btn-rock computer-btn-rock">
+
+                    </div>
+                    <a class="button btn-paper computer-btn-paper"></a>
+                    <a class="button btn-scissors computer-btn-scissors"></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+    <script src="scripts/rock-paper-scissors.js"></script>
+</body>
+
 </html>

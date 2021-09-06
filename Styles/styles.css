@@ -1,0 +1,92 @@
+html, body {
+
+    --background-color: #232222;
+    --text-color: white;
+    --hover-color: red;
+    background: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    visibility:visible;
+}
+
+.result-container p {
+    font-size: 2em;
+}
+
+.players {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.player-container {
+    margin: 0 50px 0 50px;
+}
+
+.computer-container {
+    margin-left: 50px;
+}
+
+.computer-buttons button {
+    pointer-events: none;
+}
+
+.score {
+    text-align: center;
+}
+
+.player-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+.button {
+    min-width: 70px;
+    height: 70px;
+    margin: 10px;
+    color: var(--text-color);
+    background: var(--background-color); 
+    border: 1px solid var(--text-color);
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.button:hover {
+
+    
+}
+
+.player-buttons .button:hover {
+    border-color: var(--hover-color);
+    box-shadow: 0 1px 5px 0 var(--hover-color);
+    cursor: pointer;
+}
+
+.play-again-button {
+    width: 100px;
+}
+
+
+
+

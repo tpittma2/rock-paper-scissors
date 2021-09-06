@@ -92,4 +92,4 @@ function game(numRounds = 5) {
     console.log(`${finalScoreText} (Final Score: ${playerScore} to ${computerScore})`);
 }
 
-game();
+//game();
