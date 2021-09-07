@@ -119,7 +119,6 @@ function game(playerSelection) {
     }
 
     addLog(result);
-    //console.log(`${result} (Current Score: ${playerScore} to ${computerScore})`);
     if (playerScore == 5 || computerScore == 5) {
         let finalScoreText;
         if (playerScore > computerScore)
@@ -132,8 +131,6 @@ function game(playerSelection) {
 
 
     }
-    // console.log();
-    // console.log(`${finalScoreText} (Final Score: ${playerScore} to ${computerScore})`);
 }
 
 function addLog(logText) {
@@ -145,12 +142,8 @@ function addLog(logText) {
 
 function setActiveButtons(playerSelection, computerSelection) {
     let className = 'active-button';
-    playerBtnRock.classList.remove(className);
-    playerBtnPaper.classList.remove(className);
-    playerBtnScissors.classList.remove(className);
-    computerBtnRock.classList.remove(className);
-    computerBtnPaper.classList.remove(className);
-    computerBtnScissors.classList.remove(className);
+    let btns = document.querySelectorAll(`.${className}`);
+    btns.forEach(btn=> btn.classList.remove(className));
 
     let playerSelectedButton;
     let computerSelectedButton;
@@ -185,16 +178,22 @@ function setActiveButtons(playerSelection, computerSelection) {
 
 }
 
+function playRound(e) {
+    game(e.currentTarget.dataset.button);
+    e.stopPropagation(); //prevents bubbling
+}
+
 function InitControls() {
 
     playAgainBtn.onclick = () => window.location.reload();
+    let playerButtons = document.querySelectorAll('.player-btn');
+    playerButtons.forEach(div => div.addEventListener('click', playRound, 
+    {
+        capture: false, //Reverses-bubbling if set to true
+        once: false     //Makes click only happen once if set to true, can be good for things like store checkouts.
+    }));
 
-    playerBtnRock.addEventListener('click', function (e) {
-        game(e.currentTarget.dataset.button);
-    });
-    playerBtnPaper.addEventListener('click', function (e) { game(e.currentTarget.dataset.button); });
-    playerBtnScissors.addEventListener('click', function (e) { game(e.currentTarget.dataset.button); });
-
+ 
 }
 InitControls();
 //clearActiveButtons();
